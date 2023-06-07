@@ -11,6 +11,7 @@ class App{
     }
     middleware(){
         this.app.use(express.json())
+        this.app.use(express.static('assets'))
         this.app.use(express.urlencoded({ extended: true }))
         this.app.get('/about', (req, res)=>res.send(`Halo, ini dari halaman about!`))
         this.app.use('*', (req, res)=>res.send(`Halo, ini adalah halaman default!`))
